@@ -18,21 +18,21 @@ void config_load_default(sysconfig_p config)
     os_sprintf(config->password,"%s",   WIFI_PASSWORD);
     config->auto_connect                = 1;
 
-    config->use_ap			= false;
+    config->use_ap			= true;
     os_sprintf(config->ap_ssid,"%s",    WIFI_AP_SSID);
     os_sprintf(config->ap_password,"%s",WIFI_AP_PASSWORD);
-    config->ap_channel			= 1;
-    config->ap_open			= 1;
-    config->ap_on			= 1;
+    config->ap_channel			= 7;
+    config->ap_open			= 0;
+    config->ap_on			= 0;
     config->ssid_hidden			= 0;
     config->max_clients			= MAX_CLIENTS;
-    IP4_ADDR(&config->ap_dns, 192, 168, 240, 2);
+    IP4_ADDR(&config->ap_dns, 172, 16, 1, 2);
 
     config->locked			= 0;
-    IP4_ADDR(&config->ip_addr, 192, 168, 240, 1);
-    IP4_ADDR(&config->ip_addr_peer, 192, 168, 240, 2);
+    IP4_ADDR(&config->ip_addr, 172, 16, 2, 1);
+    IP4_ADDR(&config->ip_addr_peer, 172, 16, 1, 2);
     config->clock_speed			= 160;
-    config->bit_rate                    = 115200;
+    config->bit_rate                    = 38400;
 }
 
 int config_load(sysconfig_p config)
