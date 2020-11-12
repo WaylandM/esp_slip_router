@@ -926,7 +926,7 @@ char int_no = 2;
 
     // Configure the SLIP interface
     if (config.use_ap) {
-	IP4_ADDR(&netmask, 255, 255, 255, 0);
+	IP4_ADDR(&netmask, 255, 255, 0, 0);
 	netif_add (&sl_netif, &config.ip_addr, &netmask, &config.ip_addr_peer, &int_no, slipif_init, ip_input);
 	netif_set_up(&sl_netif);
 
@@ -935,7 +935,7 @@ char int_no = 2;
 	//ip_napt_enable(my_ip.addr, 1);
 
     } else {
-	IP4_ADDR(&netmask, 255, 255, 255, 0);
+	IP4_ADDR(&netmask, 255, 255, 0, 0);
 	IP4_ADDR(&gw, 127, 0, 0, 1);
 	netif_add (&sl_netif, &config.ip_addr, &netmask, &gw, &int_no, slipif_init, ip_input);
 	netif_set_up(&sl_netif);

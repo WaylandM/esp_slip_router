@@ -26,11 +26,11 @@ void config_load_default(sysconfig_p config)
     config->ap_on			= 0;
     config->ssid_hidden			= 0;
     config->max_clients			= MAX_CLIENTS;
-    IP4_ADDR(&config->ap_dns, 172, 16, 1, 2);
+    IP4_ADDR(&config->ap_dns, 172, 16, 2, 1);
 
     config->locked			= 0;
-    IP4_ADDR(&config->ip_addr, 172, 16, 2, 1);
-    IP4_ADDR(&config->ip_addr_peer, 172, 16, 1, 2);
+    IP4_ADDR(&config->ip_addr, 172, 16, 1, 2);
+    IP4_ADDR(&config->ip_addr_peer, 172, 16, 2, 1);
     config->clock_speed			= 160;
     config->bit_rate                    = 38400;
 }
